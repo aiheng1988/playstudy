@@ -1,24 +1,27 @@
 #{extends 'common.html' /}
-
 <div id="loginPanel">
-<div class="container-fluid">
-  <div class="row">
-	<div class="panel panel-primary ">
-		<div class="panel-heading">用户登陆</div>
+	<div class="panel">
+		<div class="login-title"><span class="icon-user"></span> 用户登陆</div>
 		<div class="panel-body">
-			<form>
+			#{ifErrors}
+			   <div class="alert alert-danger">
+			   #{errors}
+				<span class="icon-exclamation-sign" aria-hidden="true"></span>
+				<span>${error}</span><br/>
+			   #{/errors}
+			   </div>
+			#{/ifErrors}
+			<form action="/auth" method="POST" enctype="application/x-www-form-urlencoded">
 				<div class="form-group">
 					<label for="userName">用户名</label> 
-					<input type="email" class="form-control" id="userName" >
+					<input type="text" class="form-control" id="userName" name="userName" value="${flash.userName}"/>
 				</div>
 				<div class="form-group">
 					<label for="password">密码</label> 
-					<input type="password" class="form-control" id="password" >
+					<input type="password" class="form-control" id="password" name="password" value="${flash.password}"/>
 				</div>
 				<button type="submit" class="btn btn-primary">登陆</button>
 			</form>
-		</div>
 	</div>
-  </div>
 </div>
 </div>

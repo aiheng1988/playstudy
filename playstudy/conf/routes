@@ -7,6 +7,12 @@ GET     /                                       Application.index
 
 GET     /login									Application.login
 
+POST	/auth									Application.auth
+
+GET		/admin									Application.admin
+
+GET		/logout									Application.logout
+
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 

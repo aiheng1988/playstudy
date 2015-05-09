@@ -1,3 +1,8 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
+validation.required=%s不能为空
+userName=用户名
+password=密码
+userNameAndPassword=用户名和密码
+error=%s不正确
