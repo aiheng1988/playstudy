@@ -1,9 +1,10 @@
 package controllers;
 import play.data.validation.Validation;
+import play.mvc.After;
 import play.mvc.Before;
 import play.mvc.Controller;
 
-public class Application extends Controller {
+public class AdminController extends Controller {
 	
 	/**
 	 * 检查用户是否登陆
@@ -59,6 +60,7 @@ public class Application extends Controller {
 	}
 	
 	public static void admin(){
+		renderArgs.put("userName", session.get("userName"));
 		render();
 	}
 	
@@ -68,5 +70,9 @@ public class Application extends Controller {
 	public static void logout(){
 		session.clear();
 		login();
+	}
+	
+	public static void users(){
+		render();
 	}
 }
