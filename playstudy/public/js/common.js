@@ -1,5 +1,7 @@
 $(function(){
 	
+	var $loading = $("<div class='text-center'><br/><img src='/public/img/loading.gif'/></div>");
+	
 	$('.submenu > a').click(function(e)
 	{
 		e.preventDefault();
@@ -29,18 +31,29 @@ $(function(){
 		}
 	});
 	
-	$("#userListLink").click(function(){
-		$.ajax({
-		    type: 'GET',
-		    url: '/users',
-		    dataType: 'html',
-		    beforeSend: function(xhr){
-		    	$("#content-body").html("<div class='text-center'><img src='/public/img/loading.gif'/></div>");
-		    },
-		    success: function(data){
-		    	$("#content-body").html(data);
-		    }
-		});
+	$(".urlLink").click(function(){
+		var $this = $(this);
+		var linkUrl = $(this).attr("data-url");
+		if(linkUrl) {
+			$.ajax({
+			    type: 'GET',
+			    url: linkUrl,
+			    dataType: 'html',
+			    beforeSend: function(xhr){
+			    	$("#content-body").html($loading);
+			    },
+			    error: function(xhr) {
+			    	$.alert("服务器错误");
+			    },
+			    success: function(data){
+			    	$("#content-body").html(data);
+			    	$("#bigMenuUl").find("*[class='active']").removeClass();
+			    	$this.parent("li").attr("class", "active");
+			    }
+			});
+		} else {
+			$.alert("未设置data-url属性");
+		}
 	});
 	
 });

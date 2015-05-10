@@ -4,6 +4,8 @@
 	<link rel="stylesheet" href="@{'/public/css/ailinxi-media.css'}" />
 #{/set}
 #{set 'moreJs'}
+    <script src="@{'/public/js/bootstrap-modal.js'}"></script>
+	<script src="@{'/public/js/bootstrap-modalmanager.js'}"></script>
 	<script src="@{'/public/js/common.js'}"></script>
 #{/set}
 <!--Header-part-->
@@ -28,14 +30,14 @@
   </ul>
 </div>
 <!--sidebar-menu-->
-<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> 控制台</a>
-  <ul>
-    <li class="active"><a href="javascript:void(0);"><i class="icon icon-home"></i> <span>首页</span></a> </li>
-    <li><a href="javascript:void(0);" id="userListLink"><i class="icon icon-user"></i> <span>用户列表</span></a> </li>
-    <li><a href="javascript:void(0);"><i class="icon icon-signal"></i> <span>图表统计</span></a> </li>
-    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>表单</span> </a>
+<div id="sidebar">
+  <ul id="bigMenuUl">
+    <li class="active"><a href="javascript:void(0);" class="urlLink"><i class="icon icon-home"></i> <span>首页</span></a> </li>
+    <li><a href="javascript:void(0);" class="urlLink" data-url="/users"><i class="icon icon-user"></i> <span>用户列表</span></a> </li>
+    <li><a href="javascript:void(0);" class="urlLink"><i class="icon icon-signal"></i> <span>图表统计</span></a> </li>
+    <li class="submenu"> <a href="javascript:void(0);" class="menuLink"><i class="icon icon-th-list"></i> <span>表单</span> </a>
       <ul>
-        <li><a href="javascript:void(0);">基本表单</a></li>
+        <li><a href="javascript:void(0);" class="urlLink" data-url="/users">基本表单</a></li>
       </ul>
     </li>
   </ul>
@@ -46,7 +48,7 @@
   <!--当前位置-->
   <div id="content-header">
     <div id="breadcrumb"> 
-    <a href="/admin" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+    <a href="/admin" title="登陆首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
     </div>
   </div>
   <div class="container-fluid" id="content-body">
