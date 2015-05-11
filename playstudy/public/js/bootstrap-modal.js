@@ -379,7 +379,6 @@
 	  var createBox = function(){
 	      $(".modal[id^=_myModal_]").remove();
 	      var $box = $('<div class="modal fade" role="dialog" id="_myModal_' + new Date().getTime() + '" style="display:none;" aria-hidden="true">' +
-	    		  '<div class="modal-dialog">' +
 	    		  	'<div class="modal-content">' +
 	                  '<div class="modal-header">' +
 	                    '<a class="close" data-dismiss="modal">×</a>' +
@@ -392,7 +391,6 @@
 	                    '<button type="button" class="btn" data-dismiss="modal" id="_cancel">取消</button>' +
 	                    '<button type="button" class="btn btn-primary" id="_ok">确定</button>' +
 	                  '</div>' +
-	                 '</div>' +
 	                 '</div>' +
 	                '</div>');
 	      $box.appendTo("body").css({"position": "absolute", "left": "50%", "top": "50%", "margin-top": - $box.height()/2 + "px", "margin-left": - $box.width()/2 + "px"});

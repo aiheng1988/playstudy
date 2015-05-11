@@ -4,25 +4,29 @@
 			<tr>
 				<th><input type="checkbox" id="title-table-checkbox"
 					name="title-table-checkbox" /></th>
+				<th>ID</th>
 				<th>用户名</th>
 				<th>邮箱</th>
 				<th>注册日期</th>
 				<th>最后登陆时间</th>
+				<th>状态</th>
 				<th>操作</th>
 			</tr>
 		</thead>
 		<tbody>
+		 #{list items:users, as:'user' }
 			<tr>
 				<td class="text-center"><input type="checkbox" /></td>
-				<td class="text-center">admin</td>
-				<td class="text-center">ahern88@163.com</td>
-				<td class="text-center">2015-05-10</td>
-				<td class="text-center">2015-05-10 01:03</td>
+				<td class="text-center">${user.id}</td>
+				<td class="text-center">${user.userName}</td>
+				<td class="text-center">${user.email}</td>
+				<td class="text-center">${user.registerDate}</td>
+				<td class="text-center">${user.lastLoginDate}</td>
+				<td class="text-center">${user.status}</td>
 				<td>
 					<div class="dropdown text-center">
-						<a title="" href="#" data-toggle="dropdown" class="dropdown-toggle">
-							<i class="icon icon-asterisk"></i> <span class="text">操作</span><b
-							class="caret"></b>
+						<a href="javascript:void(0);" data-toggle="dropdown" class="dropdown-toggle">
+							<span class="text">操作</span><b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu text-left">
 							<li><a href="#"><i class="icon-edit"></i> 编辑</a></li>
@@ -32,6 +36,18 @@
 					</div>
 				</td>
 			</tr>
+		 #{/list}
 		</tbody>
 	</table>
+	<nav class="pull-right">
+      <ul class="pagination">
+        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#" aria-label="Next"><span aria-hidden="true">下一页</span></a></li>
+     </ul>
+   </nav>
 </div>

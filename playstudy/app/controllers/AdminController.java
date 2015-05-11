@@ -1,6 +1,8 @@
 package controllers;
+import java.util.List;
+
+import models.Users;
 import play.data.validation.Validation;
-import play.mvc.After;
 import play.mvc.Before;
 import play.mvc.Controller;
 
@@ -48,7 +50,7 @@ public class AdminController extends Controller {
 	        validation.keep();
 	        login();
 		}
-		if("admin".equals(userName) && "admin".equals(password)) {
+		if(Users.find("userName = ? and password = ?", userName, password).fetch().size() > 0) {
 			session.put("userName", userName);
 			admin();
 		} else {
@@ -73,6 +75,8 @@ public class AdminController extends Controller {
 	}
 	
 	public static void users(){
+		List<Users> users = Users.findAll();
+		renderArgs.put("users", users);
 		render();
 	}
 }

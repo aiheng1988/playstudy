@@ -16,15 +16,17 @@ body {
 	color: #006dcc;
 	font-size: 16px;
 	border-bottom: #f1f1f1 1px solid;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 #loginPanel .btn, #loginPanel input{
 	width: 100%;
 	height: 30px;
 	box-sizing:border-box;
 	border-radius:2px;
-	margin-top: 5px;
 }
 #loginPanel label {
 	font-weight: bolder;
+}
+.pagination {
+	margin: 0px;
 }

@@ -5,17 +5,17 @@
 # Home page
 GET     /                                       AdminController.index
 
-GET     /login									AdminController.login
+GET     /admin/login							AdminController.login
 
-POST	/auth									AdminController.auth
+POST	/admin/auth								AdminController.auth
 
-GET		/admin									AdminController.admin
+GET		/admin/index							AdminController.admin
 
-GET		/logout									AdminController.logout
+GET		/admin/logout							AdminController.logout
 
 # user manager
 
-GET		/users									AdminController.users
+GET		/admin/users							AdminController.users
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
