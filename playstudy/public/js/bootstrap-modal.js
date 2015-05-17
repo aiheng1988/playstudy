@@ -409,7 +409,7 @@
 	          backdrop: "static"
 	        });
 	  };
-
+	  
 	  $.confirm = function (message, okfn) {
 	        var $box = createBox();
 	        $box.find("span#_title").html("<h4 class='icon-exclamation-sign'> 确认提示</h4>");
